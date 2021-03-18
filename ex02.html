@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Exercicio 2</title>
+</head>
+<body>
+<h1>Exercicio 2</h1>
+
+
+<form id="form">
+    <input id="field1" type="text" placeholder="Nome"><br>
+    <input id="field2" type="text" placeholder="Genero">
+    <button>Enviar</button>
+</form>
+
+<div id="result"></div>
+
+<script>
+function onSubmit(event){
+    event.preventDefault()
+
+    let name = field1.value
+    let genre = field2.value
+
+    if(genre==="feminino" || genre==="masculino"){
+        if(genre === "feminino"){
+            result.innerHTML = `<p class="female"> Oi! ${name} seja bem vinda!`
+        }else{
+            result.innerHTML = `<p class="male"> Oi! ${name} seja bem vindo!`
+        }
+    }else{
+        result.innerHTML = `O programa só aceita feminino ou masculino!`
+        return
+    }
+
+}
+form.addEventListener('submit', onSubmit)
+
+</script>
+</body>
+</html>
